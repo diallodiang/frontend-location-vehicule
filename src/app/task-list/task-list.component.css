@@ -1,0 +1,35 @@
+/* réutilise ton style .task-container etc. */
+.task-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+.header-row { display:flex; justify-content:space-between; align-items:center; gap:10px; }
+.controls { display:flex; gap:10px; align-items:center; }
+.controls input { padding:8px 10px; border-radius:6px; border:1px solid #ddd; width:220px; }
+
+.tabs { margin:12px 0; display:flex; gap:8px; }
+.tabs button { border: none; background: #f0f2f5; padding:8px 12px; border-radius:8px; cursor:pointer; display:flex; gap:6px; align-items:center; }
+.tabs button.active { background: linear-gradient(90deg,#2e86c1,#5dade2); color:white; }
+
+table { width:100%; border-collapse:collapse; margin-top:10px; }
+thead { background: linear-gradient(135deg, #5dade2, #2e86c1); color:white; }
+thead th { padding:10px; text-align:left; }
+tbody td { padding:10px; border-bottom:1px solid #f0f0f0; }
+
+button { cursor:pointer; }
+button .material-icons { vertical-align:middle; }
+
+/* action buttons */
+button[title] { background: transparent; border: none; padding:6px; border-radius:6px; }
+button[title]:hover { background: #eef6ff; }
+
+/* pagination */
+.pagination { display:flex; align-items:center; gap:10px; justify-content:center; margin-top:14px; }
+.refresh-btn { background:#1976d2; color:white; border:none; padding:8px 12px; border-radius:6px; display:flex; gap:6px; align-items:center; }
+.loading { text-align:center; padding:12px; color:#666; }
+.empty { padding:12px; color:#666; text-align:center; }
