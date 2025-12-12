@@ -24,8 +24,8 @@ claim(_t18: CamundaTask) {
 throw new Error('Method not implemented.');
 }
   tasks: CamundaTask[] = [
-    { id: "T1", name: "Valider contrat", assignee: null },
-    { id: "T2", name: "Attribuer véhicule", assignee: "amine" },
+    { id: "Tache1", name: "Valider contrat", assignee: null },
+    { id: "Tache2", name: "Attribuer véhicule", assignee: "amine" },
   ];
 
   filteredTasks = [...this.tasks];
