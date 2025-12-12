@@ -1,18 +1,45 @@
 <div class="task-container">
   <h2>Liste des Tâches</h2>
 
+  <!-- Recherche -->
+  <input type="text"
+         [(ngModel)]="search"
+         (input)="applyFilter()"
+         placeholder="Rechercher une tâche..."
+         class="search-box">
+
+  <!-- Bouton recharger -->
+  <button class="reload-btn" (click)="loadTasks()"> Recharger</button>
+
   <table>
     <thead>
       <tr>
-        <th>ID Tâche</th>
-        <th>Nom Tâche</th>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Assignée À</th>
+        <th>Actions</th>
       </tr>
     </thead>
+
     <tbody>
-      <tr *ngFor="let task of tasks">
-        <td data-label="ID Tâche">{{ task.idTache }}</td>
-        <td data-label="Nom Tâche">{{ task.nomTache }}</td>
+      <tr *ngFor="let task of filteredTasks | slice:(currentPage-1)*pageSize:(currentPage)*pageSize">
+        <td data-label="ID">{{ task.id }}</td>
+        <td data-label="Nom">{{ task.name }}</td>
+        <td data-label="Assignée">{{ task.assignee || "Non assignée" }}</td>
+
+        <td data-label="Actions">
+          <button class="btn-claim" (click)="claim(task)"> reclamé</button>
+          <button class="btn-complete" (click)="complete(task)"> Complete</button>
+        </td>
       </tr>
     </tbody>
   </table>
+
+  <!-- Pagination -->
+  <div class="pagination">
+    <button (click)="currentPage = currentPage - 1" [disabled]="currentPage === 1">⬅</button>
+    Page {{ currentPage }}
+    <button (click)="currentPage = currentPage + 1"
+      [disabled]="currentPage * pageSize >= filteredTasks.length">➡</button>
+  </div>
 </div>
