@@ -1,0 +1,123 @@
+/* Container */
+.tasks-container {
+  padding: 24px;
+  background: #f4f6f9;
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Title */
+.title {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* Loading */
+.loading {
+  padding: 16px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* Table wrapper */
+.table-wrapper {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+}
+
+/* Table */
+.tasks-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Header */
+.tasks-table thead {
+  background: #f9fafb;
+}
+
+.tasks-table th {
+  text-align: left;
+  padding: 14px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #6b7280;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Rows */
+.tasks-table td {
+  padding: 14px 16px;
+  font-size: 14px;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tasks-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.tasks-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* Task name */
+.task-name {
+  font-weight: 500;
+  color: #111827;
+}
+
+/* Date */
+.date {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Badge variants */
+.badge.assigned {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge.unassigned {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.badge.created {
+  background: #e0f2fe;
+  color: #075985;
+}
+
+.badge.completed {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tasks-table th,
+  .tasks-table td {
+    padding: 10px 12px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+}

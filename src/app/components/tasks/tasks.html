@@ -1,0 +1,62 @@
+<div class="tasks-container">
+
+  <h2 class="title">📋 Liste des tâches</h2>
+
+  <div *ngIf="loading" class="loading">
+    Chargement des tâches…
+  </div>
+
+  <div class="table-wrapper" *ngIf="!loading">
+    <table class="tasks-table">
+      <thead>
+        <tr>
+          <th>Tâche</th>
+          <th>Assignation</th>
+          <th>État</th>
+          <th>Créée le</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let task of tasks">
+          <td class="task-name">
+            {{ task.name }}
+          </td>
+
+          <td>
+            <span
+              class="badge assigned"
+              *ngIf="task.assignee; else unassigned">
+              Assignée
+            </span>
+
+            <ng-template #unassigned>
+              <span class="badge unassigned">
+                Non assignée
+              </span>
+            </ng-template>
+          </td>
+
+          <td>
+            <span
+              class="badge created"
+              *ngIf="task.taskState === 'Created'">
+              En cours
+            </span>
+
+            <span
+              class="badge completed"
+              *ngIf="task.taskState === 'Completed'">
+              Terminée
+            </span>
+          </td>
+
+          <td class="date">
+            {{ task.created | date:'dd/MM/yyyy HH:mm' }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
